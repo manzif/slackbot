@@ -8,7 +8,7 @@
     "dev": "nodemon --exec babel-node ./src/app.js",
     "test": "nyc --reporter=text mocha --require @babel/register --require @babel/polyfill ./src/api/*.js --timeout 80000 --exit",
     "coverage": "test && nyc report --reporter=text-lcov | coveralls",
-    "start": "node build/server.js",
+    "start": "node build/app.js",
     "build": "babel src --out-dir build"
   },
   "dependencies": {
