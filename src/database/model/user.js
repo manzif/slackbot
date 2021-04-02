@@ -3,14 +3,17 @@ import { Schema, model } from "mongoose";
 const usersSchema = new Schema({
   username: {
     type: String,
-    required: [true, "user id is required"]
+    required: [true, "user id is required"],
   },
   feelings: {
     type: String,
     required: [true, "name is required"],
   },
   availableAt: {
-    type: String
+    type: String,
+  },
+  hobbies: {
+    type: Array,
   },
   createdAt: {
     type: Date,
