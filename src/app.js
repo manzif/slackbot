@@ -5,10 +5,12 @@ import logger from "morgan";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
 import { listenForEvents } from "./controllers/events";
 import { listenForInteractions } from "./controllers/interactions";
 import usersInfo from "./api/userInfo";
 
+dotenv.config();
 const app = express();
 listenForEvents(app);
 listenForInteractions(app);
@@ -27,14 +29,14 @@ app.use(logger("dev")); // log requests to the console
 // Parse incoming requests data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(routes);
-app.use("/slack", usersInfo.getUsersInfo);
 
 app.get("*", (req, res) =>
   res.status(200).send({
     message: "Welcome to the SlackBot API route",
   })
 );
+app.use("/slack", usersInfo.getUsersInfo);
+
 
 const port = process.env.PORT || 3000;
 
