@@ -4,13 +4,11 @@ import express from "express";
 import logger from "morgan";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
 import cors from "cors";
 import { listenForEvents } from "./controllers/events";
 import { listenForInteractions } from "./controllers/interactions";
 import usersInfo from "./api/userInfo";
 
-dotenv.config();
 const app = express();
 listenForEvents(app);
 listenForInteractions(app);
