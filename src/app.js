@@ -3,7 +3,6 @@ import "regenerator-runtime";
 import express from "express";
 import logger from "morgan";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import { listenForEvents } from "./controllers/events";
@@ -25,10 +24,6 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
   });
-app.use(logger("dev")); // log requests to the console
-// Parse incoming requests data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/slack", usersInfo.getUsersInfo);
 
