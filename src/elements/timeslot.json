@@ -7,7 +7,7 @@
   "actions": [
     {
       "name": "time_slot_list",
-      "text": "Tell me how are you",
+      "text": "when are you free?",
       "type": "select",
       "options": [
         {

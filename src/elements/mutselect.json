@@ -1,0 +1,55 @@
+[
+  {
+    "type": "section",
+    "block_id": "section678",
+    "text": {
+      "type": "mrkdwn",
+      "text": "What are your favorite hobbies"
+    },
+    "accessory": {
+      "action_id": "text1234",
+      "type": "multi_static_select",
+      "placeholder": {
+        "type": "plain_text",
+        "text": "Select your hobbies"
+      },
+      "options": [
+        {
+          "text": {
+            "type": "plain_text",
+            "text": "*Football*"
+          },
+          "value": "Football"
+        },
+        {
+          "text": {
+            "type": "plain_text",
+            "text": "*Music*"
+          },
+          "value": "Music"
+        },
+        {
+          "text": {
+            "type": "plain_text",
+            "text": "*Movies*"
+          },
+          "value": "Movies"
+        },
+        {
+          "text": {
+            "type": "plain_text",
+            "text": "*Basktball*"
+          },
+          "value": "Basktball"
+        },
+        {
+          "text": {
+            "type": "plain_text",
+            "text": "*Sleep*"
+          },
+          "value": "Sleep"
+        }
+      ]
+    }
+  }
+]
