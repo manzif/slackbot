@@ -1,5 +1,5 @@
 import "regenerator-runtime";
-import "@babel/polyfill";
+// import "@babel/polyfill";
 import express from "express";
 import logger from "morgan";
 import mongoose from "mongoose";
@@ -30,11 +30,6 @@ app.use(logger("dev")); // log requests to the console
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("*", (req, res) =>
-  res.status(200).send({
-    message: "Welcome to the SlackBot API route",
-  })
-);
 app.use("/slack", usersInfo.getUsersInfo);
 
 

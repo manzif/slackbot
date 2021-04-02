@@ -1,4 +1,4 @@
-{
+const timeslot = {
   "text": "when are you free this week for a walk?",
   "fallback": "Upgrade your Slack client to use messages like these.",
   "color": "#3AA3E3",
@@ -62,3 +62,4 @@
     }
   ]
 }
+module.exports = timeslot;

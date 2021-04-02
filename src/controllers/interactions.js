@@ -1,5 +1,5 @@
 import { createMessageAdapter } from "@slack/interactive-messages";
-import timeslot from "../elements/timeslot.json";
+import timeslot from "../elements/timeslot";
 import dotenv from "dotenv";
 import UserInfo from "../database/model/user";
 

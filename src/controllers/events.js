@@ -1,6 +1,6 @@
 import { createEventAdapter } from "@slack/events-api";
 import { WebClient } from "@slack/web-api";
-import feelings from "../elements/feelings.json"
+import feelings from "../elements/feelings"
 import dotenv from "dotenv";
 
 dotenv.config();
