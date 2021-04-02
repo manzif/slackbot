@@ -9,7 +9,7 @@
     "test": "nyc --reporter=text mocha --require @babel/register --require @babel/polyfill ./src/api/*.js --timeout 80000 --exit",
     "coverage": "test && nyc report --reporter=text-lcov | coveralls",
     "start": "node build/server.js",
-    "build": "yarn create_tables && babel src --out-dir build"
+    "build": "babel src --out-dir build"
   },
   "dependencies": {
     "@babel/cli": "^7.10.5",
