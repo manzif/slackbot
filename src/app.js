@@ -30,6 +30,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(routes);
 app.use("/slack", usersInfo.getUsersInfo);
 
+app.get("*", (req, res) =>
+  res.status(200).send({
+    message: "Welcome to the SlackBot API route",
+  })
+);
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
