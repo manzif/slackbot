@@ -31,6 +31,13 @@ const respondToSelectDropdown = async (payload, respond) => {
     return respondWithTheSecondQuestion(respond);
   } else if (payload.callback_id === "timeslot") {
     userData.availableAt = selectedOption;
+    // Check if the user already exists
+    const findUser = await UserInfo.findOne({ username: payload.user.name})
+    if (findUser) {
+      //Update the user info
+      await findUser.updateOne(userData);
+      return { text: "Thank you" };
+    }
     await UserInfo.create(userData);
 
     return { text: "Thank you" };

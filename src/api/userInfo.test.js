@@ -1,15 +1,24 @@
 import app from "./../app";
-import supertest from "supertest";
+import chai from "chai";
+import chaiHttp from "chai-http";
 
-const request = supertest(app);
+chai.use(chaiHttp);
+chai.should();
+chai.expect();
+
 
 describe("testing-server-routes", () => {
-  it("GET /states - success", async () => {
-    const response = await request.get("/slack");
-
-    expect(response.status).toBe(200);
-    expect(response.body.message).toBe(
-      "Users information retrieved successfully"
-    );
+  
+  it("should ...", (done) => {
+    chai
+      .request(app)
+      .get("/slack")
+      .end((err, res) => {
+        res.status.should.equal(200);
+        res.body.message.should.equal(
+          "Users information retrieved successfully"
+        );
+        done();
+      });
   });
 });

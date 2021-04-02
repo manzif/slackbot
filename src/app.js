@@ -1,5 +1,5 @@
 import "regenerator-runtime";
-import "babel-polyfill";
+import "@babel/polyfill";
 import express from "express";
 import logger from "morgan";
 import mongoose from "mongoose";
@@ -14,14 +14,12 @@ listenForEvents(app);
 listenForInteractions(app);
 app.use(cors());
 
+const DB_URL = process.env.NODE_ENV === "TEST" ? process.env.MONGODB_URL_TEST : process.env.MONGODB_URL;
 mongoose
-  .connect(
-    "mongodb+srv://manzi:manzi@slackbot@cluster0.e4pfx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   });

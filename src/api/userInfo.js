@@ -12,7 +12,7 @@ class userInfoManager {
       const result = await UserInfo.find();
       if (result.length === 0) {
         return res.status(404).json({
-          message: "users information not found"
+          message: "users information not found",
         });
       }
       res.status(200).json({
