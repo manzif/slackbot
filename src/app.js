@@ -15,7 +15,10 @@ listenForEvents(app);
 listenForInteractions(app);
 app.use(cors());
 
-const DB_URL = process.env.NODE_ENV === "TEST" ? process.env.MONGODB_URL_TEST : process.env.MONGODB_URL;
+const DB_URL =
+  process.env.NODE_ENV === "TEST"
+    ? process.env.MONGODB_URL_TEST
+    : process.env.MONGODB_URL;
 mongoose
   .connect(DB_URL, {
     useNewUrlParser: true,
@@ -26,7 +29,6 @@ mongoose
   });
 
 app.use("/slack", usersInfo.getUsersInfo);
-
 
 const port = process.env.PORT || 3000;
 

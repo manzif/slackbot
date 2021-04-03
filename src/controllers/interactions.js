@@ -53,11 +53,11 @@ const respondToSelectDropdown = async (payload, respond) => {
     if (findUser) {
       //Update the user info
       await findUser.updateOne(userData);
-      return { text: "Thank you" };
+      return respondWithThankYou(respond);
     }
     await UserInfo.create(userData);
 
-    return { text: "Thank you" };
+    return respondWithThankYou(respond);
   }
   // Return a replacement message
   return { text: "Processing..." };
@@ -76,5 +76,11 @@ const respondWithTheThirdQuestion = (respond) => {
     text: "",
     attachments: [hobbies],
     replace_original: true,
+  });
+};
+
+const respondWithThankYou = (respond) => {
+  respond({
+    text: "Thank you",
   });
 };
