@@ -53,10 +53,16 @@ const respondToSelectDropdown = async (payload, respond) => {
     if (findUser) {
       //Update the user info
       await findUser.updateOne(userData);
+
       return respondWithThankYou(respond);
     }
     await UserInfo.create(userData);
-
+    userData = {
+      username: "",
+      feelings: "",
+      availableAt: "",
+      hobbies: [],
+    };
     return respondWithThankYou(respond);
   }
   // Return a replacement message
