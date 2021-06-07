@@ -52,9 +52,7 @@ const respondToSelectDropdown = async (payload, respond) => {
     const findUser = await UserInfo.findOne({ username: payload.user.name });
     if (findUser) {
       //Update the user info
-      await findUser.updateOne(userData);
-
-      return respondWithThankYou(respond);
+      await findUser.deleteOne();
     }
     await UserInfo.create(userData);
     userData = {
